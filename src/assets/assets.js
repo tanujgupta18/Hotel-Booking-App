@@ -10,6 +10,10 @@ import roomImg1 from "./roomImg1.png";
 import roomImg2 from "./roomImg2.png";
 import roomImg3 from "./roomImg3.png";
 import roomImg4 from "./roomImg4.png";
+import arrowIcon from "./arrowIcon.svg";
+import exclusiveOfferCardImg1 from "./exclusiveOfferCardImg1.png";
+import exclusiveOfferCardImg2 from "./exclusiveOfferCardImg2.png";
+import exclusiveOfferCardImg3 from "./exclusiveOfferCardImg3.png";
 
 export const assets = {
   logo,
@@ -20,20 +24,50 @@ export const assets = {
   calenderIcon,
   starIconFilled,
   locationIcon,
+  arrowIcon,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
 
+// Exclusive Offers Dummy Data
+export const exclusiveOffers = [
+  {
+    _id: 1,
+    title: "Summer Escape Package",
+    description: "Enjoy a complimentary night and daily breakfast",
+    priceOff: 25,
+    expiryDate: "Aug 31",
+    image: exclusiveOfferCardImg1,
+  },
+  {
+    _id: 2,
+    title: "Romantic Getaway",
+    description: "Special couples package including spa treatment",
+    priceOff: 20,
+    expiryDate: "Sep 20",
+    image: exclusiveOfferCardImg2,
+  },
+  {
+    _id: 3,
+    title: "Luxury Retreat",
+    description:
+      "Book 60 days in advance and save on your stay at any of our luxury properties worldwide.",
+    priceOff: 30,
+    expiryDate: "Sep 25",
+    image: exclusiveOfferCardImg3,
+  },
+];
+
 // User Dummy Data
 export const userDummyData = {
   _id: "user_2unqyL4diJFP1E3pIBnasc7w8hP",
-  username: "Great Stack",
-  email: "user.greatstack@gmail.com",
+  username: "John Doe",
+  email: "John.doe@gmail.com",
   image:
     "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzJ2N2c5YVpSSEFVYVUxbmVYZ2JkSVVuWnFzWSJ9",
   role: "hotelOwner",
-  createdAt: "2025-03-25T09:29:16.367Z",
-  updatedAt: "2025-04-10T06:34:48.719Z",
+  createdAt: "2026-01-12T09:29:16.367Z",
+  updatedAt: "2026-01-14T06:34:48.719Z",
   __v: 1,
   recentSearchedCities: ["New York"],
 };
@@ -46,8 +80,8 @@ export const hotelDummyData = {
   contact: "+0123456789",
   owner: userDummyData,
   city: "New York",
-  createdAt: "2025-04-10T06:22:11.663Z",
-  updatedAt: "2025-04-10T06:22:11.663Z",
+  createdAt: "2026-01-10T06:22:11.663Z",
+  updatedAt: "2026-01-14T06:22:11.663Z",
   __v: 0,
 };
 
@@ -61,8 +95,8 @@ export const roomsDummyData = [
     amenities: ["Room Service", "Mountain View", "Pool Access"],
     images: [roomImg1, roomImg2, roomImg3, roomImg4],
     isAvailable: true,
-    createdAt: "2025-04-10T06:26:04.013Z",
-    updatedAt: "2025-04-10T06:26:04.013Z",
+    createdAt: "2026-01-10T06:26:04.013Z",
+    updatedAt: "2026-01-14T06:26:04.013Z",
     __v: 0,
   },
   {
@@ -73,8 +107,8 @@ export const roomsDummyData = [
     amenities: ["Room Service", "Mountain View", "Pool Access"],
     images: [roomImg2, roomImg3, roomImg4, roomImg1],
     isAvailable: true,
-    createdAt: "2025-04-10T06:25:22.593Z",
-    updatedAt: "2025-04-10T06:25:22.593Z",
+    createdAt: "2026-01-10T06:25:22.593Z",
+    updatedAt: "2026-01-14T06:25:22.593Z",
     __v: 0,
   },
   {
@@ -85,8 +119,8 @@ export const roomsDummyData = [
     amenities: ["Free WiFi", "Free Breakfast", "Room Service"],
     images: [roomImg3, roomImg4, roomImg1, roomImg2],
     isAvailable: true,
-    createdAt: "2025-04-10T06:24:06.285Z",
-    updatedAt: "2025-04-10T06:24:06.285Z",
+    createdAt: "2026-01-10T06:24:06.285Z",
+    updatedAt: "2026-01-14T06:24:06.285Z",
     __v: 0,
   },
   {
@@ -97,8 +131,8 @@ export const roomsDummyData = [
     amenities: ["Free WiFi", "Room Service", "Pool Access"],
     images: [roomImg4, roomImg1, roomImg2, roomImg3],
     isAvailable: true,
-    createdAt: "2025-04-10T06:23:20.252Z",
-    updatedAt: "2025-04-10T06:23:20.252Z",
+    createdAt: "2026-01-10T06:23:20.252Z",
+    updatedAt: "2026-01-14T06:23:20.252Z",
     __v: 0,
   },
 ];
