@@ -19,6 +19,11 @@ import instagramIcon from "./instagramIcon.svg";
 import facebookIcon from "./facebookIcon.svg";
 import twitterIcon from "./twitterIcon.svg";
 import linkendinIcon from "./linkendinIcon.svg";
+import freeWifiIcon from "./freeWifiIcon.svg";
+import freeBreakfastIcon from "./freeBreakfastIcon.svg";
+import roomServiceIcon from "./roomServiceIcon.svg";
+import mountainIcon from "./mountainIcon.svg";
+import poolIcon from "./poolIcon.svg";
 
 export const assets = {
   logo,
@@ -35,6 +40,11 @@ export const assets = {
   facebookIcon,
   twitterIcon,
   linkendinIcon,
+  freeWifiIcon,
+  freeBreakfastIcon,
+  roomServiceIcon,
+  mountainIcon,
+  poolIcon,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
@@ -101,6 +111,15 @@ export const testimonials = [
       "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!",
   },
 ];
+
+// Facility Icon
+export const facilityIcons = {
+  "Free WiFi": assets.freeWifiIcon,
+  "Free Breakfast": assets.freeBreakfastIcon,
+  "Room Service": assets.roomServiceIcon,
+  "Mountain View": assets.mountainIcon,
+  "Pool Access": assets.poolIcon,
+};
 
 // User Dummy Data
 export const userDummyData = {
