@@ -15,6 +15,10 @@ import exclusiveOfferCardImg1 from "./exclusiveOfferCardImg1.png";
 import exclusiveOfferCardImg2 from "./exclusiveOfferCardImg2.png";
 import exclusiveOfferCardImg3 from "./exclusiveOfferCardImg3.png";
 import starIconOutlined from "./starIconOutlined.svg";
+import instagramIcon from "./instagramIcon.svg";
+import facebookIcon from "./facebookIcon.svg";
+import twitterIcon from "./twitterIcon.svg";
+import linkendinIcon from "./linkendinIcon.svg";
 
 export const assets = {
   logo,
@@ -27,6 +31,10 @@ export const assets = {
   locationIcon,
   arrowIcon,
   starIconOutlined,
+  instagramIcon,
+  facebookIcon,
+  twitterIcon,
+  linkendinIcon,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
