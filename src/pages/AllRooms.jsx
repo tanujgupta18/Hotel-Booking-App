@@ -14,13 +14,13 @@ const AllRooms = () => {
 
   const handleRoomTypeChange = (checked, label) => {
     setSelectedRoomTypes((prev) =>
-      checked ? [...prev, label] : prev.filter((i) => i !== label)
+      checked ? [...prev, label] : prev.filter((i) => i !== label),
     );
   };
 
   const handlePriceChange = (checked, label) => {
     setSelectedPriceRanges((prev) =>
-      checked ? [...prev, label] : prev.filter((i) => i !== label)
+      checked ? [...prev, label] : prev.filter((i) => i !== label),
     );
   };
 
@@ -107,7 +107,7 @@ const AllRooms = () => {
               <p className="text-gray-500">{room.hotel.city}</p>
               <p
                 onClick={() => {
-                  navigate(`/room/${room._id}`);
+                  navigate(`/rooms/${room._id}`);
                   scrollTo(0, 0);
                 }}
                 className="text-gray-800 text-3xl font-playfair cursor-pointer"

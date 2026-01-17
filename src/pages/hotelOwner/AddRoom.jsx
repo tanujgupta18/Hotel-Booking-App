@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Title from "../../components/Title";
-import { assets } from "../../../../assets/assets";
+import { assets } from "../../assets/assets";
 
 const AddRoom = () => {
   const [images, setImages] = useState({ 1: null, 2: null, 3: null, 4: null });
