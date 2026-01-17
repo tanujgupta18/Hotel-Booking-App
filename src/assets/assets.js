@@ -24,6 +24,10 @@ import freeBreakfastIcon from "./freeBreakfastIcon.svg";
 import roomServiceIcon from "./roomServiceIcon.svg";
 import mountainIcon from "./mountainIcon.svg";
 import poolIcon from "./poolIcon.svg";
+import homeIcon from "./homeIcon.svg";
+import locationFilledIcon from "./locationFilledIcon.svg";
+import heartIcon from "./heartIcon.svg";
+import badgeIcon from "./badgeIcon.svg";
 
 export const assets = {
   logo,
@@ -45,6 +49,10 @@ export const assets = {
   roomServiceIcon,
   mountainIcon,
   poolIcon,
+  homeIcon,
+  locationFilledIcon,
+  heartIcon,
+  badgeIcon,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
@@ -121,13 +129,37 @@ export const facilityIcons = {
   "Pool Access": assets.poolIcon,
 };
 
+// For Room Details Page
+export const roomCommonData = [
+  {
+    icon: assets.homeIcon,
+    title: "Clean & Safe Stay",
+    description: "A well-maintained and hygienic space just for you.",
+  },
+  {
+    icon: assets.badgeIcon,
+    title: "Enhanced Cleaning",
+    description: "This host follows Staybnb's strict cleaning standards.",
+  },
+  {
+    icon: assets.locationFilledIcon,
+    title: "Excellent Location",
+    description: "90% of guests rated the location 5 stars.",
+  },
+  {
+    icon: assets.heartIcon,
+    title: "Smooth Check-In",
+    description: "100% of guests gave check-in a 5-star rating.",
+  },
+];
+
 // User Dummy Data
 export const userDummyData = {
   _id: "user_2unqyL4diJFP1E3pIBnasc7w8hP",
   username: "John Doe",
   email: "John.doe@gmail.com",
   image:
-    "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzJ2N2c5YVpSSEFVYVUxbmVYZ2JkSVVuWnFzWSJ9",
+    "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zOEVRZXJuRHdkdWEwUjhZeVRnTm5PR0pUenUifQ",
   role: "hotelOwner",
   createdAt: "2026-01-12T09:29:16.367Z",
   updatedAt: "2026-01-14T06:34:48.719Z",
