@@ -28,6 +28,7 @@ import homeIcon from "./homeIcon.svg";
 import locationFilledIcon from "./locationFilledIcon.svg";
 import heartIcon from "./heartIcon.svg";
 import badgeIcon from "./badgeIcon.svg";
+import guestsIcon from "./guestsIcon.svg";
 
 export const assets = {
   logo,
@@ -53,6 +54,7 @@ export const assets = {
   locationFilledIcon,
   heartIcon,
   badgeIcon,
+  guestsIcon,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
@@ -228,6 +230,58 @@ export const roomsDummyData = [
     isAvailable: true,
     createdAt: "2026-01-10T06:23:20.252Z",
     updatedAt: "2026-01-14T06:23:20.252Z",
+    __v: 0,
+  },
+];
+
+// User Bookings Dummy Data
+export const userBookingsDummyData = [
+  {
+    _id: "67f76839994a731e97d3b8ce",
+    user: userDummyData,
+    room: roomsDummyData[1],
+    hotel: hotelDummyData,
+    checkInDate: "2025-04-30T00:00:00.000Z",
+    checkOutDate: "2025-05-01T00:00:00.000Z",
+    totalPrice: 299,
+    guests: 1,
+    status: "pending",
+    paymentMethod: "Stripe",
+    isPaid: true,
+    createdAt: "2025-04-10T06:42:01.529Z",
+    updatedAt: "2025-04-10T06:43:54.520Z",
+    __v: 0,
+  },
+  {
+    _id: "67f76829994a731e97d3b8c3",
+    user: userDummyData,
+    room: roomsDummyData[0],
+    hotel: hotelDummyData,
+    checkInDate: "2025-04-27T00:00:00.000Z",
+    checkOutDate: "2025-04-28T00:00:00.000Z",
+    totalPrice: 399,
+    guests: 1,
+    status: "pending",
+    paymentMethod: "Pay At Hotel",
+    isPaid: false,
+    createdAt: "2025-04-10T06:41:45.873Z",
+    updatedAt: "2025-04-10T06:41:45.873Z",
+    __v: 0,
+  },
+  {
+    _id: "67f76810994a731e97d3b8b4",
+    user: userDummyData,
+    room: roomsDummyData[3],
+    hotel: hotelDummyData,
+    checkInDate: "2025-04-11T00:00:00.000Z",
+    checkOutDate: "2025-04-12T00:00:00.000Z",
+    totalPrice: 199,
+    guests: 1,
+    status: "pending",
+    paymentMethod: "Pay At Hotel",
+    isPaid: false,
+    createdAt: "2025-04-10T06:41:20.501Z",
+    updatedAt: "2025-04-10T06:41:20.501Z",
     __v: 0,
   },
 ];
