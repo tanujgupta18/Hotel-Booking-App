@@ -30,6 +30,9 @@ import heartIcon from "./heartIcon.svg";
 import badgeIcon from "./badgeIcon.svg";
 import guestsIcon from "./guestsIcon.svg";
 import regImage from "./regImage.png";
+import addIcon from "./addIcon.svg";
+import dashboardIcon from "./dashboardIcon.svg";
+import listIcon from "./listIcon.svg";
 
 export const assets = {
   logo,
@@ -57,6 +60,9 @@ export const assets = {
   badgeIcon,
   guestsIcon,
   regImage,
+  addIcon,
+  dashboardIcon,
+  listIcon,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
