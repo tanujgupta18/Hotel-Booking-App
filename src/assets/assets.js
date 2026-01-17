@@ -35,6 +35,7 @@ import dashboardIcon from "./dashboardIcon.svg";
 import listIcon from "./listIcon.svg";
 import totalBookingIcon from "./totalBookingIcon.svg";
 import totalRevenueIcon from "./totalRevenueIcon.svg";
+import uploadArea from "./uploadArea.svg";
 
 export const assets = {
   logo,
@@ -67,6 +68,7 @@ export const assets = {
   listIcon,
   totalBookingIcon,
   totalRevenueIcon,
+  uploadArea,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
