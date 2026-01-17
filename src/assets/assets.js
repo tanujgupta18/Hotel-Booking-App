@@ -29,6 +29,7 @@ import locationFilledIcon from "./locationFilledIcon.svg";
 import heartIcon from "./heartIcon.svg";
 import badgeIcon from "./badgeIcon.svg";
 import guestsIcon from "./guestsIcon.svg";
+import regImage from "./regImage.png";
 
 export const assets = {
   logo,
@@ -55,6 +56,7 @@ export const assets = {
   heartIcon,
   badgeIcon,
   guestsIcon,
+  regImage,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
