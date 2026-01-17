@@ -33,6 +33,8 @@ import regImage from "./regImage.png";
 import addIcon from "./addIcon.svg";
 import dashboardIcon from "./dashboardIcon.svg";
 import listIcon from "./listIcon.svg";
+import totalBookingIcon from "./totalBookingIcon.svg";
+import totalRevenueIcon from "./totalRevenueIcon.svg";
 
 export const assets = {
   logo,
@@ -63,6 +65,8 @@ export const assets = {
   addIcon,
   dashboardIcon,
   listIcon,
+  totalBookingIcon,
+  totalRevenueIcon,
 };
 
 export const cities = ["Dubai", "Singapore", "New York", "London"];
@@ -293,3 +297,10 @@ export const userBookingsDummyData = [
     __v: 0,
   },
 ];
+
+// Dashboard Dummy Data
+export const dashboardDummyData = {
+  totalBookings: 3,
+  totalRevenue: 897,
+  bookings: userBookingsDummyData,
+};
