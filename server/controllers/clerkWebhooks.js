@@ -8,12 +8,12 @@ const clerkWebhooks = async () => {
 
     const headers = {
       "svix-id": req.headers["svix-id"],
-      "svix-timestamps": req.headers["svix-timestamps"],
+      "svix-timestamp": req.headers["svix-timestamp"],
       "svix-signature": req.headers["svix-signature"],
     };
 
     // Verification of Headers
-    await whook.verify(JSON.stringify(req.body));
+    await whook.verify(JSON.stringify(req.body), headers);
 
     // Get Data
     const { data, type } = req.body;
@@ -25,7 +25,7 @@ const clerkWebhooks = async () => {
       image: data.image_url,
     };
 
-    switch (key) {
+    switch (type) {
       case "user.created": {
         await User.create(data.id, userData);
         break;
