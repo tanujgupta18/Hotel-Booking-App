@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const ListRoom = () => {
   const [rooms, setRooms] = useState([]);
-  const { axios, getToken, user } = useAppContext();
+  const { currency, axios, getToken, user } = useAppContext();
 
   // Fetch Rooms of Hotel owner
   const fetchRooms = async () => {
@@ -81,8 +81,8 @@ const ListRoom = () => {
                   {item.amenities.join(", ")}
                 </td>
 
-                <td className="py-3 px-4 text-gray-700 border-t border-gray-300 text-center">
-                  $ {item.pricePerNight}
+                <td className="py-3 px-4 text-gray-700 border-t border-gray-300">
+                  {currency} {item.pricePerNight}
                 </td>
 
                 <td className="py-3 px-4 border-t border-gray-300 text-sm text-red-500 text-center">
