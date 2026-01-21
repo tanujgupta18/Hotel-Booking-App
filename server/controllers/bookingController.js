@@ -60,7 +60,7 @@ export const createBooking = async (req, res) => {
     const checkIn = new Date(checkInDate);
     const checkOut = new Date(checkOutDate);
     const timeDiff = checkOut.getTime() - checkIn.getTime();
-    const nights = Math.ceil((timeDiff / 1000) * 3600 * 24);
+    const nights = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
     totalPrice *= nights;
 
@@ -84,7 +84,7 @@ export const createBooking = async (req, res) => {
 // GET /api/bookings/user
 export const getUserBookings = async (req, res) => {
   try {
-    const user = req.body;
+    const user = req.user._id;
     const bookings = await Booking.find({ user }).populate("room hotel").sort({
       createdAt: -1,
     });
