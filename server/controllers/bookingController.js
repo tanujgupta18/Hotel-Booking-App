@@ -1,3 +1,4 @@
+import transporter from "../configs/nodemailer.js";
 import Booking from "../models/Booking.js";
 import Hotel from "../models/Hotel.js";
 import Room from "../models/Room.js";
@@ -73,6 +74,101 @@ export const createBooking = async (req, res) => {
       checkOutDate,
       totalPrice,
     });
+
+    const mailOptions = {
+      from: `"QuickStay" <${process.env.SENDER_EMAIL}>`,
+      to: req.user.email,
+      subject: "Your Booking is Confirmed – QuickStay 🏨",
+      html: `
+        <div style="max-width:600px;margin:auto;font-family:'Outfit',Arial,Helvetica,sans-serif;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;background:#ffffff">
+
+        <!-- Header -->
+        <div style="background:#2563eb;color:#ffffff;padding:24px;text-align:center">
+          <h1 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:600">
+            QuickStay
+          </h1>
+          <p style="margin:6px 0 0;font-size:14px;opacity:0.95">
+            Booking Confirmation
+          </p>
+        </div>
+
+        <!-- Body -->
+        <div style="padding:24px;color:#374151;font-size:15px;line-height:1.6">
+
+          <p style="margin-top:0">
+            Hi <strong>${req.user.username}</strong>,
+          </p>
+
+          <p>
+            Thank you for booking with <strong>QuickStay</strong>!  
+            Your reservation has been successfully confirmed. Below are your booking details:
+          </p>
+
+          <h2 style="margin:24px 0 12px;font-family:'Playfair Display',Georgia,serif;font-size:20px;color:#111827">
+            Booking Details
+          </h2>
+
+          <table style="width:100%;border-collapse:collapse;font-size:14px">
+            <tr>
+              <td style="padding:8px 0;color:#6b7280">Booking ID</td>
+              <td style="padding:8px 0;font-weight:500">${booking._id}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280">Hotel</td>
+              <td style="padding:8px 0;font-weight:500">${roomData.hotel.name}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280">Location</td>
+              <td style="padding:8px 0">${roomData.hotel.address}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280">Check-In</td>
+              <td style="padding:8px 0">
+                ${new Date(booking.checkInDate).toDateString()}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280">Check-Out</td>
+              <td style="padding:8px 0">
+                ${new Date(booking.checkOutDate).toDateString()}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280">Guests</td>
+              <td style="padding:8px 0">${booking.guests}</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 0;color:#111827;font-weight:600">
+                Total Amount
+              </td>
+              <td style="padding:12px 0;font-weight:700;color:#2563eb">
+                ${process.env.CURRENCY || "$"} ${booking.totalPrice}
+              </td>
+            </tr>
+          </table>
+
+          <p style="margin-top:24px">
+            We look forward to welcoming you and hope you have a wonderful stay.
+          </p>
+
+          <p style="margin-bottom:0">
+            Regards,<br />
+            <strong>Team QuickStay</strong>
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <div style="background:#f9fafb;padding:16px;text-align:center;font-size:12px;color:#6b7280">
+          © ${new Date().getFullYear()} QuickStay. All rights reserved.
+        </div>
+
+      </div>
+
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
     res.json({ success: true, message: "Booking created successfully" });
   } catch (error) {
     console.log(error);
