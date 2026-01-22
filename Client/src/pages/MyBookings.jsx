@@ -9,7 +9,6 @@ const MyBookings = () => {
   const { currency, user, getToken, axios } = useAppContext();
   const [bookings, setBookings] = useState([]);
   const location = useLocation();
-  const [loading, setLoading] = useState(false);
 
   const fetchUserBookings = async () => {
     try {
@@ -29,7 +28,6 @@ const MyBookings = () => {
 
   const handlePayment = async (bookingId) => {
     try {
-      setLoading(true);
       const { data } = await axios.post(
         "/api/bookings/stripe-payment",
         { bookingId },
@@ -45,8 +43,6 @@ const MyBookings = () => {
       }
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -134,11 +130,8 @@ const MyBookings = () => {
                 </p>
               </div>
               {!booking.isPaid && (
-                <button
-                  disabled={loading}
-                  onClick={() => handlePayment(booking._id)}
-                >
-                  {loading ? "Redirecting..." : "Pay Now"}
+                <button onClick={() => handlePayment(booking._id)}>
+                  Pay Now
                 </button>
               )}
             </div>
