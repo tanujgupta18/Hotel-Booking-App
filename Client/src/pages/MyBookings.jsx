@@ -3,10 +3,13 @@ import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import toast from "react-hot-toast";
+import { useLocation } from "react-router-dom";
 
 const MyBookings = () => {
   const { currency, user, getToken, axios } = useAppContext();
   const [bookings, setBookings] = useState([]);
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
   const fetchUserBookings = async () => {
     try {
@@ -26,6 +29,7 @@ const MyBookings = () => {
 
   const handlePayment = async (bookingId) => {
     try {
+      setLoading(true);
       const { data } = await axios.post(
         "/api/bookings/stripe-payment",
         { bookingId },
@@ -41,6 +45,8 @@ const MyBookings = () => {
       }
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,7 +54,7 @@ const MyBookings = () => {
     if (user) {
       fetchUserBookings();
     }
-  }, [user]);
+  }, [user, location.pathname]);
 
   return (
     <div className="py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32">
@@ -129,10 +135,10 @@ const MyBookings = () => {
               </div>
               {!booking.isPaid && (
                 <button
+                  disabled={loading}
                   onClick={() => handlePayment(booking._id)}
-                  className="px-4 py-1.5 mt-4 text-sm border border-gray-400 rounded-full hover:bg-gray-50 transition-all cursor-pointer"
                 >
-                  Pay Now
+                  {loading ? "Redirecting..." : "Pay Now"}
                 </button>
               )}
             </div>

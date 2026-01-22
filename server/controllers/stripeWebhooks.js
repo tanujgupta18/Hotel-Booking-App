@@ -7,7 +7,7 @@ export const stripeWebhooks = async (req, res) => {
   const sig = req.headers["stripe-signature"];
   let event;
   try {
-    event = stripeInstance.webhooks.contructEvent(
+    event = stripeInstance.webhooks.constructEvent(
       req.body,
       sig,
       process.env.STRIPE_WEBHOOK_SECRET,
@@ -17,21 +17,15 @@ export const stripeWebhooks = async (req, res) => {
   }
 
   // Handle the event
-  if (event.type === "payemnt_intent.succeeded") {
-    const paymentIntend = event.data.object;
-    const paymentIntendId = paymentIntend.id;
+  if (event.type === "checkout.session.completed") {
+    const session = event.data.object;
 
-    // Getting Sesssion MetaData
-    const session = await stripeInstance.checkout.sessions.list({
-      payment_intend: paymentIntendId,
-    });
+    const bookingId = session.metadata.bookingId;
 
-    const { bookingId } = session.data[0].metadata;
-
-    // Mark Payment as paid
     await Booking.findByIdAndUpdate(bookingId, {
       isPaid: true,
       paymentMethod: "Stripe",
+      status: "confirmed",
     });
   } else {
     console.log("Unhandled event type:", event.type);
