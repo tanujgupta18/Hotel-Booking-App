@@ -7,7 +7,7 @@ const connectDB = async () => {
     );
     await mongoose.connect(`${process.env.MONGODB_URI}/hotel-booking`);
   } catch (error) {
-    console.log(error.message);
+    console.error(error);
   }
 };
 

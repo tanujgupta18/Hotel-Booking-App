@@ -11,8 +11,8 @@ import roomRouter from "./routes/roomRoutes.js";
 import bookingRouter from "./routes/bookingRoutes.js";
 import { stripeWebhooks } from "./controllers/stripeWebhooks.js";
 
-connectDB();
-connectCloudinary();
+await connectDB();
+await connectCloudinary();
 
 const app = express();
 app.use(cors()); // Enable Cross-Origin Resource Sharing
